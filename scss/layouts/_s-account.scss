@@ -1,0 +1,210 @@
+.s-account {
+  padding-top: 12.4rem;
+  padding-bottom: 8.8rem;
+
+  .container {
+    @include flex($align: flex-start, $justify: space-between);
+
+    .col-1 {
+      width: 100%;
+      max-width: 54.2rem;
+
+      h2 {
+        line-height: 112%;
+        letter-spacing: -0.1rem;
+        color: var(--color-gray-600);
+        margin-bottom: 4.6rem;
+
+        span {
+          font-weight: 600;
+          line-height: 112%;
+          letter-spacing: -0.1rem;
+          color: var(--color-gray-200);
+          display: block;
+          margin-bottom: 0.8rem;
+          opacity: 0.8;
+        }
+      }
+
+      .list-items {
+        margin-bottom: 4.8rem;
+
+        .list-content {
+          @include flex($align: center);
+          gap: 2.6rem;
+          &:not(:last-child) {
+            margin-bottom: 3.8rem;
+          }
+
+          .list-content-icon {
+            width: 4.5rem;
+            height: 4.5rem;
+            background-color: var(--color-green-400);
+            border-radius: 0.8rem;
+            @include flex($align: center, $justify: center);
+            flex-shrink: 0;
+          }
+
+          .list-content-info {
+            h4 {
+              font-weight: 500;
+              line-height: 112%;
+              letter-spacing: -0.05rem;
+              color: var(--color-gray-400);
+              margin-bottom: 0.4rem;
+            }
+
+            p {
+              color: var(--color-gray-300);
+              font-size: 1.8rem;
+              font-weight: 400;
+              line-height: 150%;
+            }
+          }
+        }
+      }
+    }
+
+    .col-2 {
+      width: 100%;
+      max-width: 71.2rem;
+      height: 59.8rem;
+      position: relative;
+      margin-right: -15.4rem;
+
+      .checking {
+        position: absolute;
+        top: 7.8rem;
+        left: 0;
+        z-index: 2;
+      }
+
+      .login {
+        position: absolute;
+        top: 0;
+        left: 25.8rem;
+        z-index: 1;
+      }
+
+      .ilustration {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+      }
+    }
+  }
+}
+
+@include media("xl") {
+  .s-account {
+    .container {
+      @include flex($direction: column, $align: center);
+      gap: 7.6rem;
+
+      .col-1 {
+        h2 {
+          text-align: center;
+        }
+
+        > a {
+          display: table;
+          margin: auto;
+        }
+      }
+
+      .col-2 {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@include media("md") {
+  .s-account {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+
+    .container {
+      .col-2 {
+        max-width: 58.2rem;
+        height: 63.2rem;
+
+        .checking {
+          top: 8rem;
+          left: 5.2rem;
+        }
+
+        .login {
+          top: 0;
+          left: initial;
+          right: 3.2rem;
+        }
+
+        .ilustration {
+          width: 100%;
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+@include media("sm") {
+  .s-account {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    .container {
+      gap: 4.6rem;
+
+      .col-1 {
+        h2 {
+          font-size: 2.8rem;
+          font-weight: 600;
+
+          max-width: 40rem;
+          margin: 0 auto 4rem;
+
+          span {
+            font-size: 2.4rem;
+          }
+        }
+
+        .list-items {
+          max-width: 37.5rem;
+          margin: 0 auto 4.2rem;
+
+          .list-content {
+            text-align: center;
+            @include flex($direction: column, $align: center);
+            gap: 1.6rem;
+
+            .list-content-info {
+              p {
+                font-size: 1.4rem;
+              }
+            }
+          }
+        }
+      }
+
+      .col-2 {
+        max-width: 35.7rem;
+        height: 47rem;
+
+        .checking {
+          top: 5.8rem;
+          left: 0;
+          max-width: 16.8rem;
+        }
+
+        .login {
+          top: 0;
+          right: 0;
+          max-width: 16.8rem;
+        }
+      }
+    }
+  }
+}

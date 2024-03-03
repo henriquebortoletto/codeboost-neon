@@ -1,0 +1,143 @@
+:root {
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "Poppins", sans-serif;
+
+  --color-gray-600: #33303e;
+  --color-gray-500: #4e4b59;
+  --color-gray-400: #5f5c6b;
+  --color-gray-300: #7a7786;
+  --color-gray-200: #c6c5ce;
+  --color-gray-100: #f1f0f5;
+
+  --color-yellow-300: #ffdc5c;
+  --color-yellow-400: #ffc800;
+  --color-yellow-900: #855b35;
+
+  --color-blue-500: #0073ce;
+  --color-blue-400: #00a5f0;
+  --color-blue-300: #01c7df;
+
+  --color-green-400: #00d7d7;
+
+  --color-white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: 1.6rem;
+  font-weight: 400;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+  all: unset;
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-primary);
+  font-size: 1.6rem;
+  line-height: 140%;
+  color: var(--color-gray-100);
+  width: 100%;
+}
+
+:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-yellow-400),
+    0 0 0 4px rgba(255, 200, 0, 0.4);
+}
+
+::placeholder {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 140%;
+  color: var(--color-gray-100);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.1rem;
+  color: var(--color-gray-500);
+}
+
+h1 {
+  font-size: 6.4rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+.container {
+  --gutter: 1.6rem;
+
+  width: 100%;
+  max-width: calc(121.6rem + (var(--gutter) * 2));
+
+  padding-inline: var(--gutter);
+  margin: auto;
+}

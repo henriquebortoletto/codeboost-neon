@@ -1,0 +1,380 @@
+.s-app {
+  padding-top: 12.8rem;
+  .container {
+    @include flex($align: flex-start, $justify: space-between);
+
+    .col-1 {
+      width: 100%;
+      max-width: 27.8rem;
+      margin-right: 2rem;
+
+      .app-mockup {
+        position: relative;
+        margin-bottom: 12.8rem;
+        img:first-child {
+          max-width: 37.7rem;
+          position: absolute;
+          top: 8.6rem;
+          left: -21.4rem;
+          z-index: -1;
+        }
+      }
+
+      .app-store {
+        text-align: center;
+        .app-icon {
+          position: relative;
+          &::before {
+            --height: 83px;
+
+            content: "";
+            width: 5px;
+            height: var(--height);
+            display: inline-block;
+            background: url("../../images/icon-points.svg") no-repeat center
+              center;
+            position: absolute;
+            top: calc((var(--height) * -1) + -18px);
+            left: 50%;
+            transform: translateX(-50%);
+          }
+          img {
+            margin: auto;
+          }
+        }
+
+        .app-content {
+          h3 {
+            font-weight: 500;
+            line-height: 150%;
+            letter-spacing: -0.05rem;
+            color: var(--color-gray-600);
+          }
+
+          p {
+            text-align: center;
+            line-height: 150%;
+            color: var(--color-gray-400);
+            opacity: 0.8;
+            margin-bottom: 2.6rem;
+          }
+
+          a:not(:last-child) {
+            margin-bottom: 1.2rem;
+          }
+        }
+      }
+    }
+
+    .col-2 {
+      width: 100%;
+      max-width: 80rem;
+
+      .list-items {
+        margin-bottom: 13.6rem;
+
+        h2 {
+          line-height: 112%;
+          color: var(--color-gray-600);
+          max-width: 48.8rem;
+
+          margin-top: 3rem;
+          margin-bottom: 1.6rem;
+        }
+
+        a {
+          font-family: var(--font-secondary);
+          font-weight: 500;
+          line-height: 112%;
+          letter-spacing: -0.05rem;
+          color: var(--color-blue-500);
+
+          margin-top: 3.2rem;
+          transition: color 0.3s;
+
+          &::after {
+            content: "";
+            width: 1rem;
+            height: 0.3rem;
+            background-color: var(--color-yellow-400);
+            display: inline-block;
+            margin-left: 0.8rem;
+            margin-bottom: -0.3rem;
+          }
+
+          &:hover {
+            color: var(--color-blue-400);
+          }
+        }
+
+        .list-content {
+          @include flex($align: center, $justify: space-between);
+          border-bottom: 1px solid rgba(225, 224, 231, 0.9);
+          padding-block: 3.4rem;
+
+          .list-info-wrapper {
+            @include flex($align: center);
+            gap: 4.2rem;
+
+            .list-info-icon {
+              width: 6.1rem;
+              height: 6.1rem;
+              background-color: var(--color-gray-600);
+              border-radius: 0.8rem;
+              @include flex($align: center, $justify: center);
+              flex-shrink: 0;
+
+              &.green-light {
+                background-color: var(--color-green-400);
+              }
+
+              &.blue-light {
+                background-color: var(--color-blue-400);
+              }
+
+              &.blue-dark {
+                background-color: var(--color-blue-500);
+              }
+            }
+
+            .list-info {
+              h3 {
+                font-weight: 500;
+                line-height: 150%;
+                letter-spacing: -0.05rem;
+                color: var(--color-gray-400);
+              }
+
+              p {
+                font-size: 1.8rem;
+                line-height: 150%;
+                color: var(--color-gray-300);
+              }
+            }
+          }
+
+          > img {
+            padding-left: 1rem;
+          }
+        }
+      }
+
+      .digital-account {
+        --padding-inline: 6rem;
+
+        width: 100%;
+        height: 41rem;
+        border-radius: 1.2rem;
+        background: url("../../images/bg-digital-account.svg") no-repeat center
+          center;
+        @include flex($align: center, $justify: space-between);
+
+        padding: var(--padding-inline);
+
+        .digital-account-content {
+          width: 100%;
+          max-width: 38rem;
+
+          h2 {
+            line-height: 112%;
+            letter-spacing: -0.1rem;
+            color: var(--color-white);
+            margin-bottom: 1.2rem;
+          }
+
+          h3 {
+            font-weight: 500;
+            line-height: 150%;
+            letter-spacing: -0.05rem;
+            color: var(--color-white);
+            margin-bottom: 0.8rem;
+          }
+
+          p {
+            line-height: 150%;
+            color: var(--color-white);
+            margin-bottom: 3.2rem;
+          }
+
+          .cta > *:first-child {
+            margin-right: 1.6rem;
+          }
+        }
+
+        img {
+          margin-right: calc((var(--padding-inline) * -1) + -3rem);
+          margin-top: 4.9rem;
+        }
+      }
+    }
+  }
+}
+
+@include media("lg") {
+  .s-app {
+    padding-top: 15rem;
+
+    .container {
+      @include flex($direction: column-reverse, $align: center);
+      gap: 9rem;
+
+      .col-1 {
+        @include flex($justify: space-between, $align: center);
+        max-width: 61rem;
+
+        .app-mockup {
+          max-width: 25.5rem;
+          margin-bottom: 0;
+
+          img:first-child {
+            display: none;
+          }
+        }
+
+        .app-store {
+          max-width: 27rem;
+        }
+      }
+
+      .col-2 {
+        max-width: 100%;
+
+        .digital-account {
+          background-size: cover;
+        }
+
+        .list-items {
+          margin-bottom: 5.8rem;
+
+          h2 {
+            text-align: center;
+            margin: 0 auto 2rem;
+          }
+
+          a {
+            display: table;
+            margin: 4rem auto 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media("md") {
+  .s-app {
+    .container {
+      gap: 16.8rem;
+
+      .col-2 {
+        .digital-account {
+          height: 47rem;
+          flex-direction: column;
+          padding: 4.2rem 2.8rem;
+
+          img {
+            margin: 2rem 0 0 -6%;
+          }
+
+          .digital-account-content {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media("sm") {
+  .s-app {
+    padding-top: 8.6rem;
+    padding-bottom: 0;
+
+    position: relative;
+
+    .container {
+      gap: 12rem;
+
+      .col-1 {
+        margin-right: 0;
+        flex-direction: column-reverse;
+        gap: 4rem;
+
+        .app-mockup {
+          height: 39.7rem;
+          overflow: hidden;
+        }
+
+        .app-store {
+          .app-icon {
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .col-2 {
+        .list-items {
+          margin-bottom: 3.4rem;
+
+          h2 {
+            font-size: 2.8rem;
+            max-width: 31.6rem;
+          }
+
+          .list-content {
+            .list-info-wrapper {
+              align-items: flex-start;
+              gap: 2.2rem;
+
+              .list-info {
+                h3 {
+                  font-size: 2rem;
+                }
+
+                p {
+                  font-size: 1.4rem;
+                }
+              }
+            }
+          }
+        }
+
+        .digital-account {
+          .digital-account-content {
+            h2 {
+              font-size: 2.8rem;
+            }
+
+            h3 {
+              font-size: 2rem;
+            }
+          }
+
+          img {
+            margin: 5rem 0 0 -6%;
+          }
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      height: 21.4rem;
+      background: linear-gradient(
+        180deg,
+        #f7f7fa 0%,
+        rgba(247, 247, 250, 0) 100%
+      );
+      transform: matrix(1, 0, 0, -1, 0, 0);
+
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+  }
+}
