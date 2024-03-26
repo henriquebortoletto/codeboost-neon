@@ -6,19 +6,13 @@ header {
   z-index: 20;
 
   border-bottom: 0.2rem solid rgba(255, 255, 255, 0.2);
-  padding-block: 1.9rem;
+  padding-block: 1.8rem;
 
   // apagar depois
   background-color: var(--color-blue-500);
 
   .container {
     @include flex($align: center, $justify: space-between);
-
-    img {
-      @include media("sm") {
-        width: 10.8rem;
-      }
-    }
 
     nav {
       @include flex($align: center);
@@ -27,6 +21,7 @@ header {
         @include flex($align: center);
         margin-right: 4.8rem;
         gap: 4.8rem;
+        position: relative;
 
         a {
           font-family: var(--font-secondary);
@@ -34,18 +29,92 @@ header {
           line-height: 125%;
           color: var(--color-white);
           transition: color 0.3s;
+          padding-block: 0.8rem;
 
           &:hover {
             color: var(--color-yellow-300);
           }
         }
 
-        @include media("xl") {
-          gap: 3rem;
-        }
+        li {
+          > .dropdown {
+            position: absolute;
+            top: 3.8rem;
+            left: -15rem;
+            z-index: 30;
 
-        @include media("lg") {
-          display: none;
+            @include flex($direction: column);
+            gap: 2.8rem;
+
+            background-color: var(--color-white);
+            box-shadow: rgba(149, 157, 165, 0.2) 0rem 0.8rem 2.4rem;
+
+            width: 100%;
+            max-width: 37.3rem;
+            border-radius: 0.6rem;
+
+            margin: 0;
+            padding: 4.2rem 4.6rem;
+
+            opacity: 0;
+            pointer-events: none;
+
+            a {
+              transition: color 0.3s;
+              padding-block: 0;
+              display: block;
+
+              strong {
+                font-size: 1.6rem;
+                font-weight: 600;
+                color: var(--color-gray-400);
+                display: block;
+                margin-bottom: 0.4rem;
+              }
+
+              p {
+                font-size: 1.4rem;
+                font-weight: 400;
+                line-height: 150%;
+                color: var(--color-gray-300);
+              }
+
+              &:hover {
+                strong {
+                  color: var(--color-blue-500);
+                }
+              }
+            }
+
+            &::before {
+              content: "";
+              width: 0;
+              height: 0;
+              border: 1rem solid var(--color-white);
+              transform: rotate(45deg) translate(-1rem, 1rem);
+              position: absolute;
+              top: -0.4rem;
+              left: 50%;
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+
+              width: 28.2rem;
+              height: 0.5rem;
+              background-color: var(--color-yellow-400);
+              border-radius: 0.6rem 0.6rem 0 0;
+            }
+          }
+
+          &:hover {
+            > .dropdown {
+              opacity: 1;
+              pointer-events: all;
+            }
+          }
         }
       }
 
@@ -55,14 +124,6 @@ header {
         margin-left: 4rem;
         cursor: pointer;
         display: none;
-
-        @include media("lg") {
-          @include flex(
-            $direction: column,
-            $align: flex-end,
-            $justify: space-between
-          );
-        }
 
         .line {
           width: 100%;
@@ -75,16 +136,56 @@ header {
           }
         }
       }
+    }
+  }
+}
 
-      @include media("sm") {
+@include media("sm") {
+  header {
+    padding-block: 2.1rem;
+
+    .container {
+      img {
+        width: 10.8rem;
+      }
+
+      nav {
         a.btn {
           display: none;
         }
       }
     }
   }
+}
 
-  @include media("sm") {
-    padding-block: 2.1rem;
+@include media("lg") {
+  header {
+    .container {
+      nav {
+        ul {
+          display: none;
+        }
+
+        .m-mobile {
+          @include flex(
+            $direction: column,
+            $align: flex-end,
+            $justify: space-between
+          );
+        }
+      }
+    }
+  }
+}
+
+@include media("xl") {
+  header {
+    .container {
+      nav {
+        ul {
+          gap: 3rem;
+        }
+      }
+    }
   }
 }
