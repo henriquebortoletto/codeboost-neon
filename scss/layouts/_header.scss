@@ -43,6 +43,9 @@ header {
             left: -15rem;
             z-index: 30;
 
+            transform: translateY(2rem);
+            transition: all 0.3s;
+
             @include flex($direction: column);
             gap: 2.8rem;
 
@@ -113,6 +116,7 @@ header {
             > .dropdown {
               opacity: 1;
               pointer-events: all;
+              transform: translateY(0);
             }
           }
         }
