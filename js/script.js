@@ -25,3 +25,31 @@ AOS.init({
   duration: 1000,
   once: true,
 });
+
+function initFixedMenu() {
+  const header = document.querySelector("header");
+  const button = header.querySelector(".btn");
+  if (!header || !button) return;
+
+  function handleScroll() {
+    const distanceScrollToTop = window.scrollY;
+    const limitedHeight = 80;
+
+    const scrollDistanceIsGreaterThanEighty =
+      distanceScrollToTop > limitedHeight;
+
+    const classHeader = "light";
+
+    if (scrollDistanceIsGreaterThanEighty) {
+      header.classList.add(classHeader);
+      button.classList.replace("btn-light", "btn-secondary");
+    } else {
+      header.classList.remove(classHeader);
+      button.classList.replace("btn-secondary", "btn-light");
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
+}
+
+initFixedMenu();
