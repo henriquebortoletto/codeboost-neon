@@ -29,6 +29,7 @@ AOS.init({
 function initFixedMenu() {
   const header = document.querySelector("header");
   const button = header.querySelector(".btn");
+
   if (!header || !button) return;
 
   function handleScroll() {
@@ -53,3 +54,26 @@ function initFixedMenu() {
 }
 
 initFixedMenu();
+
+function initMenuMobile() {
+  const btnMenuMobile = document.querySelector(".m-mobile");
+  const menuMobile = document.querySelector(".menu-overlay");
+
+  if (!btnMenuMobile || !menuMobile) return;
+
+  const classMenu = "open-mobile";
+  const html = document.documentElement;
+
+  function toggleMenuMobile() {
+    html.classList.toggle(classMenu);
+  }
+
+  btnMenuMobile.addEventListener("click", toggleMenuMobile);
+  menuMobile.addEventListener("click", toggleMenuMobile);
+
+  window.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") html.classList.remove(classMenu);
+  });
+}
+
+initMenuMobile();
