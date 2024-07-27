@@ -11,16 +11,16 @@
 </a>
 </p>
 
-## 🚀 About
+## 🚀 Sobre
 
-Creation of a landing page focusing on the topics below.
+Criação de uma landing page com foco nos tópicos abaixo.
 
 - [x] `SCSS`
 - [x] `Resets`
-- [x] `Variables`
-- [x] `Conditionals`
+- [x] `Variáveis`
+- [x] `Conditionais`
 - [x] `Grids`
-- [x] `Responsive`
-- [x] `Animations`
+- [x] `Responsivo`
+- [x] `Animações`
 - [x] [AOS](https://michalsnik.github.io/aos/)
 - [x] [Swiper](https://swiperjs.com/)
